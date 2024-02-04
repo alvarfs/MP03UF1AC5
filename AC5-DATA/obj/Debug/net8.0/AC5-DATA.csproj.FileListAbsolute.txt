@@ -1,0 +1,14 @@
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\bin\Debug\net8.0\AC5-DATA.exe
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\bin\Debug\net8.0\AC5-DATA.deps.json
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\bin\Debug\net8.0\AC5-DATA.runtimeconfig.json
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\bin\Debug\net8.0\AC5-DATA.dll
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\bin\Debug\net8.0\AC5-DATA.pdb
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\AC5-DATA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\AC5-DATA.AssemblyInfoInputs.cache
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\AC5-DATA.AssemblyInfo.cs
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\AC5-DATA.csproj.CoreCompileInputs.cache
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\AC5-DATA.dll
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\refint\AC5-DATA.dll
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\AC5-DATA.pdb
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\AC5-DATA.genruntimeconfig.cache
+C:\Users\alvar\OneDrive\Escritorio\GITHUB\AC5-DATA\obj\Debug\net8.0\ref\AC5-DATA.dll
