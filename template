@@ -1,0 +1,128 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        /*  tipoPersona person;
+
+         person.name = "Jhon";
+         person.surname = "Doe";
+         person.age = 20;
+
+         Console.WriteLine("La edad de {0} {1} es {2}",
+         person.name, person.surname, person.age);
+
+         //EJEMPLO 2
+
+         Coordinate point = new Coordinate(10, 20);
+
+         Console.WriteLine("El punto x: " + point.x);
+         Console.WriteLine("El punto y: " + point.y);
+
+
+         //
+
+         Person[] people = new Person[2];
+         people[0].name = "John";
+         people[0].age = 30;
+         people[1].name = "Jane";
+         people[1].age = 25;
+
+         for (int i = 0; i < people.Length; i++)
+         {
+             Console.WriteLine("Name: " + people[i].name + ", Age: " + people[i].age);
+         }
+
+         Coordinate[] points = { new Coordinate(10, 20),
+                                 new Coordinate(30, 40),
+                                 new Coordinate(30, 40),
+                                 new Coordinate(50, 60)};
+
+         foreach (var item in points)
+         {
+             Console.WriteLine("El punto x: " + item.x);
+             Console.WriteLine("El punto y: " + item.y);
+         }
+
+         //
+
+         int contador = 0;
+
+         Client cliente = new Client();
+         cliente.name = "juan";
+         cliente.quantity[0] = 1;
+         cliente.quantity[1] = 1;
+         cliente.quantity[2] = 10;
+
+         foreach (var item in cliente.quantity)
+         {
+             contador++;
+         }
+
+         Console.WriteLine("nombre: ", cliente.name);
+         Console.WriteLine("cantidad: ", contador); */
+
+
+
+        Hotel[] users = new Hotel[2];
+
+        users[0].name = "John";
+        users[0].surname = "kk";
+        users[0].beds = 1;
+        users[0].rooms = 222;
+        users[1].name = "Jane";
+        users[1].surname = "pet";
+        users[1].beds = 2;
+        users[1].rooms = 111;
+
+        foreach (var item in users)
+        {
+            Console.WriteLine("el nombre: " + item.name);
+            Console.WriteLine("el apellido: " + item.surname);
+            Console.WriteLine("camas: " + item.beds);
+            Console.WriteLine("habitacion" + item.rooms);
+        }
+
+
+    }
+
+    struct tipoPersona
+    {
+        public string name;
+        public string surname;
+        public int age;
+    }
+
+    struct Hotel
+    {
+        public string name;
+        public string surname;
+        public int beds;
+        public int rooms;
+    }
+
+    //Estructs con constructor
+
+    struct Coordinate
+    {
+        public int x;
+        public int y;
+
+        public Coordinate(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    struct Person
+    {
+        public string name;
+        public int age;
+    }
+
+    struct Client
+    {
+        public string name;
+        public int[] quantity;
+    }
+}
