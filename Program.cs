@@ -53,7 +53,7 @@
         {
             System.Console.WriteLine("0 - SALIR DEL PROGRAMA");
             System.Console.WriteLine("1 - GUARDAR REGISTRO");
-            System.Console.WriteLine("2 - MOSTRAR REGISTRO");
+            System.Console.WriteLine("2 - MOSTRAR REGISTROS");
             System.Console.Write("Elige una opcion: ");
             menuSelection = Convert.ToInt32(Console.ReadLine());
             System.Console.WriteLine();
@@ -87,6 +87,7 @@
                         Console.WriteLine($"edad: {employees[i].age}");
                         Console.WriteLine($"salario: {employees[i].salary}");
                         Console.WriteLine($"nombre empresa: {employees[i].nameEmp}");
+                        System.Console.WriteLine();
                     }
 
                     break;
@@ -115,21 +116,23 @@
         bool categoriaProducto = true;
         // int userOption = 0;
 
-        for (int i = 0; i < productos.Length; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                System.Console.WriteLine($"Producto {j+1}:");
-                System.Console.Write("nombre: ");
-                productos[i,j].nombre = Console.ReadLine()!;
-                System.Console.Write("precio: ");
-                productos[i,j].precio = Convert.ToInt32(Console.ReadLine());
-                System.Console.Write("cantidad: ");
-                productos[i,j].cantidad = Convert.ToInt32(Console.ReadLine());
-                productos[i,j].categoria = categoriaProducto;
-            }
-            categoriaProducto = false;
-        }
+        System.Console.WriteLine("PRODUCTOS:");
+
+        // for (int i = 0; i < productos.Length; i++)
+        // {
+        //     for (int j = 0; j < 5; j++)
+        //     {
+        //         System.Console.WriteLine($"Producto {j+1}:");
+        //         System.Console.Write("nombre: ");
+        //         productos[i,j].nombre = Console.ReadLine()!;
+        //         System.Console.Write("precio: ");
+        //         productos[i,j].precio = Convert.ToInt32(Console.ReadLine());
+        //         System.Console.Write("cantidad: ");
+        //         productos[i,j].cantidad = Convert.ToInt32(Console.ReadLine());
+        //         productos[i,j].categoria = categoriaProducto;
+        //     }
+        //     categoriaProducto = false;
+        // }
 
         // switch (userOption)
         // {
@@ -179,6 +182,21 @@
             System.Console.WriteLine($"Codigo postal: {empleado.direccion.codigoPostal}");
             System.Console.WriteLine();
         }
+
+        // 4. Declara un array bidimensional de tamaño [2, 5] para almacenar información sobre 5
+        //     productos de cada categoría. Avisa al usuario si el array está lleno.
+        //     Crea un menú con un bloque switch-case que permita al usuario realizar las siguientes
+        //     acciones:
+        //     Agregar un producto de alimentación.
+        //     Agregar un producto de otra categoría.
+        //     Mostrar todos los productos de alimentación.
+        //     Mostrar todos los productos de la categoría general.
+        //     Calcular el importe total de los productos almacenados.
+        //     Calcular el total de los productos de cada categoría.
+        //     Salir del programa.
+
+        
+
 
         // 5. Codifica una estructura llamada "Reserva" que contenga los campos: nombre del cliente,
         //     apellido y número de teléfono.
@@ -238,11 +256,11 @@
                     {
                         if (asiento == false)
                         {
-                            System.Console.Write("Libre");
+                            System.Console.Write("O");
                         }
                         else
                         {
-                            System.Console.Write("Ocupado");
+                            System.Console.Write("X");
                         }
                         System.Console.Write("|");
                     }
