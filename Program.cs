@@ -51,9 +51,9 @@
 
         do
         {
-            System.Console.WriteLine("0 - SALIR DEL PROGRAMA");
             System.Console.WriteLine("1 - GUARDAR REGISTRO");
             System.Console.WriteLine("2 - MOSTRAR REGISTROS");
+            System.Console.WriteLine("0 - SALIR DEL PROGRAMA");
             System.Console.Write("Elige una opcion: ");
             menuSelection = Convert.ToInt32(Console.ReadLine());
             System.Console.WriteLine();
@@ -72,7 +72,7 @@
                         System.Console.Write("edad: ");
                         employees[i].age = Convert.ToInt32(Console.ReadLine());
                         System.Console.Write("salario: ");
-                        employees[i].salary = Convert.ToInt32(Console.ReadLine());
+                        employees[i].salary = float.Parse(Console.ReadLine()!);
                         System.Console.Write("nombre empresa: ");
                         employees[i].nameEmp = Console.ReadLine()!;
                     }
@@ -114,35 +114,121 @@
 
         Producto[,] productos = new Producto[2,5];
         bool categoriaProducto = true;
-        // int userOption = 0;
+        int userOption = 0;
 
         System.Console.WriteLine("PRODUCTOS:");
+        System.Console.WriteLine();
 
-        // for (int i = 0; i < productos.Length; i++)
-        // {
-        //     for (int j = 0; j < 5; j++)
-        //     {
-        //         System.Console.WriteLine($"Producto {j+1}:");
-        //         System.Console.Write("nombre: ");
-        //         productos[i,j].nombre = Console.ReadLine()!;
-        //         System.Console.Write("precio: ");
-        //         productos[i,j].precio = Convert.ToInt32(Console.ReadLine());
-        //         System.Console.Write("cantidad: ");
-        //         productos[i,j].cantidad = Convert.ToInt32(Console.ReadLine());
-        //         productos[i,j].categoria = categoriaProducto;
-        //     }
-        //     categoriaProducto = false;
-        // }
+        for (int i = 0; i < 2; i++)
+        {
+            if (categoriaProducto)
+            {
+                System.Console.WriteLine("ALIMENTACION:");
+            }
+            else
+            {
+                System.Console.WriteLine("GENERAL:");
+            }
+            System.Console.WriteLine();
 
-        // switch (userOption)
-        // {
-        //     case 1:
-        //         for (int i = 0; i < 5; i++)
-        //         {
-        //             productos[]
-        //         }
-        //     default:
-        // }
+            for (int j = 0; j < 5; j++)
+            {
+                System.Console.WriteLine($"Producto {j+1}:");
+                System.Console.Write("nombre: ");
+                productos[i,j].nombre = Console.ReadLine()!;
+                System.Console.Write("precio: ");
+                productos[i,j].precio = float.Parse(Console.ReadLine()!);
+                System.Console.Write("cantidad: ");
+                productos[i,j].cantidad = Convert.ToInt32(Console.ReadLine());
+                productos[i,j].categoria = categoriaProducto;
+                System.Console.WriteLine();
+            }
+            categoriaProducto = false;
+        }
+
+        do
+        {
+            System.Console.WriteLine("1 - Mostrar productos de alimentacion");
+            System.Console.WriteLine("2 - Mostrar productos generales");
+            System.Console.WriteLine("3 - Importe total de los productos almacenados");
+            System.Console.WriteLine("4 - Total de los productos de cada categoría");
+            System.Console.WriteLine("0 - Salir del menu");
+            Console.Write("Elige opcion: ");
+            userOption = Convert.ToInt32(Console.ReadLine());
+
+            System.Console.WriteLine();
+
+            switch (userOption)
+            {
+                case 1:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.WriteLine($"Nombre producto: {productos[0,i].nombre}");
+                        Console.Write($"Precio: {productos[0,i].precio} ");
+                        Console.WriteLine($"Cantidad: {productos[0,i].cantidad}");
+                        System.Console.WriteLine();
+                    }
+
+                    break;
+                
+                case 2:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.WriteLine($"Nombre producto: {productos[1,i].nombre}");
+                        Console.Write($"Precio: {productos[1,i].precio} ");
+                        Console.WriteLine($"Precio: {productos[1,i].cantidad}");
+                        System.Console.WriteLine();
+                    }
+
+                    break;
+                
+                case 3:
+                    float totalImp = 0;
+
+                    for (int i = 0; i < 2; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            int cantidadProd = productos[i,j].cantidad;
+                            float precioProd = productos[i,j].precio;
+                            totalImp += (precioProd * cantidadProd);
+                        }
+                    }
+
+                    System.Console.WriteLine($"Importe total de todos los productos: {totalImp}");
+                    System.Console.WriteLine();
+
+                    break;
+                
+                case 4:
+                    for (int i = 0; i < 2; i++)
+                    {
+                        int totalCategoria = 0;
+                        for (int j = 0; j < 5; j++)
+                        {
+                            totalCategoria += productos[i,j].cantidad;
+                        }
+
+                        if (i==0)
+                        {
+                            System.Console.WriteLine($"Total categoría Alimentacion: {totalCategoria}");
+                        }
+                        else
+                        {
+                            System.Console.WriteLine($"Total categoría General: {totalCategoria}");
+                        }
+
+                        System.Console.WriteLine();
+                    }
+
+                    break;
+
+                default:
+                    System.Console.WriteLine();
+
+                    break;
+            }
+        } while(userOption != 0);
 
         // 3. Codifica un struct anidado llamado "Empleado" que contenga los siguientes campos:
         //     nombre, edad, salario y un struct interior llamado "Direccion" que contenga los campos:
@@ -162,7 +248,7 @@
             System.Console.Write("Edad: ");
             empleados[i].edad = Convert.ToInt32(Console.ReadLine());
             System.Console.Write("Salario: ");
-            empleados[i].salario = Convert.ToInt32(Console.ReadLine());
+            empleados[i].salario = float.Parse(Console.ReadLine()!);
             System.Console.Write("Calle: ");
             empleados[i].direccion.calle = Console.ReadLine()!;
             System.Console.Write("Ciudad: ");
@@ -174,12 +260,12 @@
 
         foreach (Empleado empleado in empleados)
         {
-            System.Console.WriteLine($"Nombre: {empleado.nombre}");
-            System.Console.WriteLine($"Edad: {empleado.edad}");
-            System.Console.WriteLine($"Salario: {empleado.salario}");
-            System.Console.WriteLine($"Calle: {empleado.direccion.calle}");
-            System.Console.WriteLine($"Ciudad: {empleado.direccion.ciudad}");
-            System.Console.WriteLine($"Codigo postal: {empleado.direccion.codigoPostal}");
+            System.Console.WriteLine($"- - - - - - Nombre: {empleado.nombre} - - - - - -");
+            System.Console.Write($"| Edad: {empleado.edad} ");
+            System.Console.Write($"| Salario: {empleado.salario} ");
+            System.Console.Write($"| Calle: {empleado.direccion.calle} ");
+            System.Console.Write($"| Ciudad: {empleado.direccion.ciudad} ");
+            System.Console.WriteLine($"| Codigo postal: {empleado.direccion.codigoPostal} ");
             System.Console.WriteLine();
         }
 
@@ -187,6 +273,7 @@
         //     productos de cada categoría. Avisa al usuario si el array está lleno.
         //     Crea un menú con un bloque switch-case que permita al usuario realizar las siguientes
         //     acciones:
+
         //     Agregar un producto de alimentación.
         //     Agregar un producto de otra categoría.
         //     Mostrar todos los productos de alimentación.
@@ -195,8 +282,137 @@
         //     Calcular el total de los productos de cada categoría.
         //     Salir del programa.
 
-        
+        Producto[,] productos_v2 = new Producto[2,5];
+        int indexA = 0;
+        int indexG = 0;
+        int userSelect = 0;
 
+        do
+        {
+            System.Console.WriteLine("1 - Agregar un producto de alimentación.");
+            System.Console.WriteLine("2 - Agregar un producto de otra categoría.");
+            System.Console.WriteLine("3 - Mostrar productos de alimentacion");
+            System.Console.WriteLine("4 - Mostrar productos generales");
+            System.Console.WriteLine("5 - Importe total de los productos almacenados");
+            System.Console.WriteLine("6 - Total de los productos de cada categoría");
+            System.Console.WriteLine("0 - Salir del menu");
+            Console.Write("Elige opcion: ");
+            userSelect = Convert.ToInt32(Console.ReadLine());
+
+            System.Console.WriteLine();
+
+            switch (userSelect)
+            {
+                case 1:
+                    if (indexA < 5)
+                    {
+                        System.Console.Write("producto: ");
+                        productos_v2[0,indexA].nombre = Console.ReadLine()!;
+                        System.Console.Write("precio: ");
+                        productos_v2[0,indexA].precio = float.Parse(Console.ReadLine()!);
+                        System.Console.Write("cantidad: ");
+                        productos_v2[0,indexA].cantidad = Convert.ToInt32(Console.ReadLine());
+                        System.Console.WriteLine();
+
+                        indexA += 1;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("No se pueden introducir mas productos de alimentacion!");
+                        System.Console.WriteLine();
+                    }  
+                    break;
+                
+                case 2:
+                    if (indexG < 5)
+                    {
+                        System.Console.Write("producto: ");
+                        productos_v2[1,indexG].nombre = Console.ReadLine()!;
+                        System.Console.Write("precio: ");
+                        productos_v2[1,indexG].precio = float.Parse(Console.ReadLine()!);
+                        System.Console.Write("cantidad: ");
+                        productos_v2[1,indexG].cantidad = Convert.ToInt32(Console.ReadLine());
+                        System.Console.WriteLine();
+
+                        indexG += 1;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("No se pueden introducir mas productos de alimentacion!");
+                        System.Console.WriteLine();
+                    }  
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.WriteLine($"Nombre producto: {productos_v2[0,i].nombre}");
+                        Console.Write($"Precio: {productos_v2[0,i].precio} ");
+                        Console.WriteLine($"Cantidad: {productos_v2[0,i].cantidad}");
+                        System.Console.WriteLine();
+                    }
+
+                    break;
+                
+                case 4:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.WriteLine($"Nombre producto: {productos_v2[1,i].nombre}");
+                        Console.Write($"Precio: {productos_v2[1,i].precio} ");
+                        Console.WriteLine($"Precio: {productos_v2[1,i].cantidad}");
+                        System.Console.WriteLine();
+                    }
+
+                    break;
+                
+                case 5:
+                    float totalImp = 0;
+
+                    for (int i = 0; i < 2; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            int cantidadProd = productos_v2[i,j].cantidad;
+                            float precioProd = productos_v2[i,j].precio;
+                            totalImp += (precioProd * cantidadProd);
+                        }
+                    }
+
+                    System.Console.WriteLine($"Importe total de todos los productos: {totalImp}");
+                    System.Console.WriteLine();
+
+                    break;
+                
+                case 6:
+                    for (int i = 0; i < 2; i++)
+                    {
+                        int totalCategoria = 0;
+                        for (int j = 0; j < 5; j++)
+                        {
+                            totalCategoria += productos_v2[i,j].cantidad;
+                        }
+
+                        if (i==0)
+                        {
+                            System.Console.WriteLine($"Total categoría Alimentacion: {totalCategoria}");
+                        }
+                        else
+                        {
+                            System.Console.WriteLine($"Total categoría General: {totalCategoria}");
+                        }
+
+                        System.Console.WriteLine();
+                    }
+
+                    break;
+
+                default:
+                    System.Console.WriteLine();
+
+                    break;
+            }
+        } while(userSelect != 0);
 
         // 5. Codifica una estructura llamada "Reserva" que contenga los campos: nombre del cliente,
         //     apellido y número de teléfono.
